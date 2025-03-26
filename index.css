@@ -1,0 +1,129 @@
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.klasifikacia{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 1.4vw;
+    color: #6e6e6e;
+    height: 80px;
+}
+
+.separator{
+    color: #ff8a00;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+img{
+    width: 85%;
+    height: auto;
+    padding: 10px 4.5% 8px 10.5% ;
+}
+
+#startARButton{
+    color: white;
+    background-color: #ff8a00;
+    border-radius: 20px;
+    padding: 1.7vw 4.5vw;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    border: none;
+    font-size: 3.5vw;
+    filter: brightness(1.1);
+}
+
+#forar{
+    margin: 5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bottompart{
+    background-color: rgb(247, 247, 247);
+    opacity: 70%;
+}
+
+.upperbpart{
+    display: flex;
+    justify-content: center;
+    gap: 1.8vw;
+}
+
+.info{
+    color: #2b2b2b;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.verticalline{
+    color: #ff8a00;;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.size{
+    color: #ff8a00;
+    font-weight:900;
+    font-family: Arial, Helvetica, sans-serif,Georgia, 'Times New Roman', Times, serif;
+    font-size: 6vw;
+    margin: 0;
+    text-decoration: underline;
+    text-decoration-color: #1f1f1f;
+    text-underline-offset: 4px;
+    padding-bottom: 10px;
+    text-decoration-thickness: 1.3px;
+}
+
+.middlebpart{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
+#middlebsubpart{
+    display: flex;
+    margin: 0;
+}
+
+.price{
+    align-self: flex-start;
+    margin: 1vw 0 0 0 ;
+    font-family: Arial, Helvetica, sans-serif,Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #272727;
+}
+
+#ccc{
+    color: #ff8a00;
+    margin: 0;
+}
+
+.bottombpart{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#phonecall{
+    color: white;
+    background-color: #ff8800;
+    border-radius: 20px;
+    margin: 3.4vw 0 0 0;
+    padding: 2.3vw 10.5vw;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif,Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    opacity: 1;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <div class="klasifikacia">
+        <p class="separator">&lt</p>
+        <p id="ubani"> საბურთალო </p>
+        <p class="separator">&lt</p>
+        <p id="korpusi"> კორპუსი B2 </p>
+        <p class="separator">&lt</p>
+        <p id="sartuli"> სართული 14 </p>
+    </div>
+
+    <div id="forimage">
+        <img src="Curves 1.png">
+    </div>
+
+    <div id="forar">
+        <button id="startARButton" >
+            AR
+        </button>
+    </div>
+
+    <div class="bottompart">
+        <div class="upperbpart">
+            <p class="info">B2 ბლოკი</p>
+            <p class="verticalline">|</p>
+            <p class="info">სართული 14</p>
+            <p class="verticalline">|</p>
+            <p class="info">ბინა 50</p>
+        </div>
+        <div class="middlebpart">
+            <p class="size">136.2 მ&#178;</p>
+            <div id="middlebsubpart">
+                <p class="price">1400$</p>
+                <p class="price">/</p>
+                <p class="price" id="ccc">კვ.მ&#178</p>
+            </div>
+        </div>
+        <div>
+            <div class="bottombpart">
+                <button id="phonecall">
+                    მოითხოვე ზარი
+                </button>
+            </div>
+        </div>
+        <div></div>
+    </div>
+
+
+    <a-scene id="#arPortalScene" embedded arjs>
+        <!-- AR Camera -->
+        <a-camera></a-camera>
+
+        <!-- AR Model for the Portal -->
+        <a-entity id="portal" 
+                  position="0 1.5 -3"
+                  scale="2 2 2"
+                  gltf-model="studio_apartment_vray_baked_textures_included.glb"
+                  animation__scale="property: scale; to: 1.5 1.5 1.5; dur: 2000; loop: true"></a-entity>
+
+        <!-- Ground (for perspective) -->
+        <a-plane position="0 0 -5" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+    </a-scene>
+
+    <script>
+        // JavaScript to trigger AR portal
+        document.getElementById('startARButton').addEventListener('click', function() {
+            // Redirect to the AR experience (the portal starts in AR)
+            window.location.href = '#arPortalScene';
+        });
+    </script>
+
+
+</body>
+</html>
