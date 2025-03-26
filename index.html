@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AR Portal Example</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/aframe-ar.js"></script>
 </head>
-
 <body>
     <div class="klasifikacia">
         <p class="separator">&lt</p>
@@ -20,11 +19,11 @@
     </div>
 
     <div id="forimage">
-        <img src="Curves 1.png">
+        <img src="Curves 1.png" alt="Image">
     </div>
 
     <div id="forar">
-        <button id="startARButton" >
+        <button id="startARButton">
             AR
         </button>
     </div>
@@ -52,37 +51,34 @@
                 </button>
             </div>
         </div>
-        <div></div>
     </div>
 
+    <!-- The AR scene -->
+    <a-scene id="arPortalScene" embedded arjs>
+        <!-- AR Camera -->
+        <a-camera></a-camera>
 
-<!-- The AR scene -->
-<a-scene id="arPortalScene" embedded arjs>
-    <!-- AR Camera -->
-    <a-camera></a-camera>
+        <!-- AR Model for the Portal -->
+        <a-entity id="portal" 
+                  position="0 1.5 -3"
+                  scale="2 2 2"
+                  gltf-model="studio_apartment_vray_baked_textures_included.glb"
+                  animation__scale="property: scale; to: 1.5 1.5 1.5; dur: 2000; loop: true"></a-entity>
 
-    <!-- AR Model for the Portal -->
-    <a-entity id="portal" 
-              position="0 1.5 -3"
-              scale="2 2 2"
-              gltf-model="studio_apartment_vray_baked_textures_included.glb"
-              animation__scale="property: scale; to: 1.5 1.5 1.5; dur: 2000; loop: true"></a-entity>
+        <!-- Ground (for perspective) -->
+        <a-plane position="0 0 -5" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+    </a-scene>
 
-    <!-- Ground (for perspective) -->
-    <a-plane position="0 0 -5" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
-</a-scene>
-
-<script>
-    // Wait until A-Frame is ready, then add event listener for AR button
-    document.getElementById('startARButton').addEventListener('click', function() {
-        // Start the AR scene by adding a class that triggers AR mode
-        var scene = document.querySelector('a-scene');
-        if (scene) {
-            scene.enterVR();
-        }
-    });
-</script>
-
-
+    <script>
+        // Event listener for starting the AR scene when the button is clicked
+        document.getElementById('startARButton').addEventListener('click', function() {
+            // Trigger AR mode by focusing on the AR scene
+            var scene = document.querySelector('a-scene');
+            if (scene) {
+                // Make sure the AR scene becomes visible
+                scene.enterVR();
+            }
+        });
+    </script>
 </body>
 </html>
