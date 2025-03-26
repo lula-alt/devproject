@@ -55,28 +55,32 @@
     </div>
 
 
-    <a-scene id="#arPortalScene" embedded arjs>
-        <!-- AR Camera -->
-        <a-camera></a-camera>
+<!-- The AR scene -->
+<a-scene id="arPortalScene" embedded arjs>
+    <!-- AR Camera -->
+    <a-camera></a-camera>
 
-        <!-- AR Model for the Portal -->
-        <a-entity id="portal" 
-                  position="0 1.5 -3"
-                  scale="2 2 2"
-                  gltf-model="studio_apartment_vray_baked_textures_included.glb"
-                  animation__scale="property: scale; to: 1.5 1.5 1.5; dur: 2000; loop: true"></a-entity>
+    <!-- AR Model for the Portal -->
+    <a-entity id="portal" 
+              position="0 1.5 -3"
+              scale="2 2 2"
+              gltf-model="studio_apartment_vray_baked_textures_included.glb"
+              animation__scale="property: scale; to: 1.5 1.5 1.5; dur: 2000; loop: true"></a-entity>
 
-        <!-- Ground (for perspective) -->
-        <a-plane position="0 0 -5" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
-    </a-scene>
+    <!-- Ground (for perspective) -->
+    <a-plane position="0 0 -5" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+</a-scene>
 
-    <script>
-        // JavaScript to trigger AR portal
-        document.getElementById('startARButton').addEventListener('click', function() {
-            // Redirect to the AR experience (the portal starts in AR)
-            window.location.href = '#arPortalScene';
-        });
-    </script>
+<script>
+    // Wait until A-Frame is ready, then add event listener for AR button
+    document.getElementById('startARButton').addEventListener('click', function() {
+        // Start the AR scene by adding a class that triggers AR mode
+        var scene = document.querySelector('a-scene');
+        if (scene) {
+            scene.enterVR();
+        }
+    });
+</script>
 
 
 </body>
