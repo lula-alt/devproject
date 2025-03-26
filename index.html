@@ -54,7 +54,7 @@
     </div>
 
     <!-- The AR scene -->
-    <a-scene id="arPortalScene" embedded arjs>
+    <a-scene id="arPortalScene" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
         <!-- AR Camera -->
         <a-camera></a-camera>
 
@@ -72,11 +72,11 @@
     <script>
         // Event listener for starting the AR scene when the button is clicked
         document.getElementById('startARButton').addEventListener('click', function() {
-            // Trigger AR mode by focusing on the AR scene
+            // Trigger AR mode (not VR)
             var scene = document.querySelector('a-scene');
             if (scene) {
-                // Make sure the AR scene becomes visible
-                scene.enterVR();
+                // This should make the AR scene visible without trying to enter VR mode
+                scene.enterAR();
             }
         });
     </script>
