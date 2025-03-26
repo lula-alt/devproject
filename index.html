@@ -72,10 +72,10 @@
     <script>
         // Event listener for starting the AR scene when the button is clicked
         document.getElementById('startARButton').addEventListener('click', function() {
-            // Trigger AR mode (not VR)
+            // Trigger AR mode (NOT VR mode)
             var scene = document.querySelector('a-scene');
             if (scene) {
-                // This should make the AR scene visible without trying to enter VR mode
+                // This will trigger the AR scene directly without entering VR mode
                 scene.enterAR();
             }
         });
